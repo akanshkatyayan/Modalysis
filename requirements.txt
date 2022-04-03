@@ -1,5 +1,5 @@
 Flask
-requests
-flask_wtf
-wtforms
-wtforms.validators=1.0.0
+pymongo==4.0.2
+passlib==1.7.4
+django
+dnspython
