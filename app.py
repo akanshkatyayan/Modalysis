@@ -34,11 +34,17 @@ from user import routes
 @app.route('/')
 def home():
     # render template to display this html page on app.route /
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 @app.route('/dashboard/')
 @login_required
 def dashboard():
-    # render template to display this html page on app.route /
-    return render_template("dashboard.html")
+    # render template to display this html page on app.route /dashboard/
+    return render_template("userdashboard.html")
+
+
+@app.route('/signup/')
+def register():
+    # render template to display signup page for new user
+    return render_template("signup.html")

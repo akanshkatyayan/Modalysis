@@ -30,7 +30,8 @@ class User:
             "_id": uuid.uuid4().hex,
             "name": request.form.get('name'),
             "email": request.form.get('email'),
-            "password": request.form.get('password')
+            "password": request.form.get('password'),
+            "role": 'app_user'
         }
 
         # Encrypt the password
@@ -66,4 +67,4 @@ class User:
         if user and pbkdf2_sha256.verify(request.form.get('password'), user['password']):
             return self.start_session(user)
 
-        return jsonify({ "error": "Invalid login credentials"}), 401
+        return jsonify({"error": "Invalid login credentials"}), 401
