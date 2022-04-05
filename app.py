@@ -7,7 +7,9 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 app = Flask(__name__)
+app.debug = True
 app.secret_key=config.get('main', 'secret_key')
+
 
 # Database
 db_connection_stmt = config.get('main', 'db_command')
@@ -42,6 +44,12 @@ def home():
 def dashboard():
     # render template to display this html page on app.route /dashboard/
     return render_template("userdashboard.html")
+
+@app.route('/dashboard/summarizer/')
+@login_required
+def summarizer():
+    # render template to display this html page on app.route /dashboard/
+    return render_template("summarizer.html")
 
 
 @app.route('/signup/')
