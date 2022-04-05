@@ -3,3 +3,7 @@ pymongo==4.0.2
 passlib==1.7.4
 django
 dnspython
+
+torchvision
+transformers
+bert-extractive-summarizer
