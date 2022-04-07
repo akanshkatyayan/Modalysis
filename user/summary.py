@@ -1,3 +1,4 @@
+from pathy import dataclass
 from summarizer import Summarizer,TransformerSummarizer
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
@@ -20,13 +21,21 @@ I’m Bryan Lynn. '''
 
 import re
 
+def data_clean(body):
+
+    body = body.encode('ascii', 'ignore').decode()
+    sentence = re.sub(r"â\s+", "", body)
+    sentence = re.sub(r'\r\n+', "", sentence)
+    
+    print(sentence)
+    return sentence
+
 
 def BERTSummarizer(body):
-
     print('len body:', len(body))
-    model = Summarizer()
-    sentence = re.sub(r"^\s+", "", body, flags=re.UNICODE)
-    result = ''.join(model(sentence, min_length=50))
+    model = Summarizer()    
+    data = data_clean(body)
+    result = ''.join(model(data, min_length=50))
     print('len BERT summary:', len(result))
     #print(result)
     return result
@@ -35,8 +44,8 @@ def GPTSummarizer(body):
 
     print('len body:', len(body))
     GPT2_model = TransformerSummarizer(transformer_type="GPT2",transformer_model_key="gpt2-medium")
-    sentence = re.sub(r"^\s+", "", body, flags=re.UNICODE)
-    full = ''.join(GPT2_model(sentence, min_length=60))
+    data = data_clean(body)
+    full = ''.join(GPT2_model(data, min_length=60))
     print('len GPT summary:', len(full))
     #print(full)
     return full
