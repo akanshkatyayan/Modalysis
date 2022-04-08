@@ -46,15 +46,38 @@ $("form[name=login_form").submit(function(e) {
     e.preventDefault();
 });
 
-
-$("form[name=signup_form").submit(function(e) {
+$("form[name=updatepassword_form").submit(function(e) {
 
     var $form = $(this);
     var $error = $form.find(".error");
     var data = $form.serialize();
 
     $.ajax({
-        url: "/user/signup",
+        url: "/user/updatepassword/",
+        type: "PUT",
+        data: data,
+        dataType: "json",
+        success: function(resp){
+            window.location.href = "/dashboard/";
+            },
+        error: function(resp){
+            console.log(resp);
+            $error.text(resp.responseJSON.error).removeClass("error--hidden");
+            }
+
+    });
+    e.preventDefault();
+});
+
+
+$("form[name=uploadmodel_form").submit(function(e) {
+
+    var $form = $(this);
+    var $error = $form.find(".error");
+    var data = $form.serialize();
+
+    $.ajax({
+        url: "/mlmodel/uploadmodel/",
         type: "POST",
         data: data,
         dataType: "json",

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Modalysis</title>
-        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -171,31 +171,31 @@
             <nav>
                 <h2 class="logo">Modaly<span>sis</span></h2>
                 <ul>
-                    <li><a href="#"><h2>Home</h2></a></li>
+                    <li><a href="/dashboard/"><h2>Home</h2></a></li>
                     <li><a href="#"><h2>Services</h2></a></li>
                     <li><a href="#"><h2>About Us</h2></a></li>
                 </ul>
+                <p class="loginlabel">Logged in as <strong> {{ session['user']['name'] }}</strong></p>
                 <a href="/user/signout" class="btn">Log Out</a>
             </nav>
 
             <div class="content">
+                <div>
+                <form name="uploadmodel_form" class="uploadmlmodel">
+                            <h3> Upload ML Model </h3>
+                            <label for="modelname">Model Name</label>
+                            <input type="text" name="modelname" placeholder="Model Name" id="modelname">
+
+                            <label for="modelfile">Upload Pickle File</label>
+                            <input type="file" name="input_model" autocomplete="False" required>
+
+                            <p class="error error--hidden"></p>
+                            <input type="submit" value="Submit" class="button">
+
+                        </form>
+                </div>
 
             </div>
-
-
-            <div class='wrapper'>
-                <nav>
-                <ul>
-                    <div class="box1">
-                        <li><h1><a href='/dashboard/uploadmlmodel/'> Upload Machine Learning Model </a></h1></li>
-
-                    </div>
-
-
-                </ul>
-                </nav>
-            </div>
-
 
         </div>
 

@@ -18,8 +18,19 @@ class MlModels:
 
         return pickle.loads(pickled_model)
 
+    def upload_model(self):
+        info = db.insert_one({model_name: pickled_model, 'name': model_name, 'created_time': time.time()})
+        print(info.inserted_id, ' saved with this id successfully!')
+
+        details = {
+            'inserted_id': info.inserted_id,
+            'model_name': model_name,
+            'created_time': time.time()
+        }
+
     def train_model(self, model_name, train_data):
         pass
 
     def evaluate_model(self, model_name, test_data):
         pass
+

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modalysis</title>
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     
@@ -162,7 +163,7 @@
 
         }
 
-    
+
       </style>
     </head>
     <body>
@@ -171,10 +172,12 @@
             <nav>
                 <h2 class="logo">Modaly<span>sis</span></h2>
                 <ul>
-                    <li><a href="#"><h2>Home</h2></a></li>
+                    <li><a href="/"><h2>Home</h2></a></li>
                     <li><a href="#"><h2>Services</h2></a></li>
                     <li><a href="#"><h2>About Us</h2></a></li>
                 </ul>
+                <p class="loginlabel">Logged in as <strong> {{ session['user']['name'] }}</strong></p>
+                <a href="/dashboard/updatepassword/" class="updatepasswordlink">Update Password</a>
                 <a href="/user/signout" class="btn">Log Out</a>
             </nav>
     
@@ -202,7 +205,7 @@
                     </div>
 
                     <div class="box1">
-                        <li><h1><a href=''>  Google Compute Engine Api </a></h1></li>
+                        <li><h1><a href='/dashboard/computeimage/'>  Google Compute Engine Api </a></h1></li>
                         <br>
                         <p> This is an external service which we have incorporated which identifies different attributes from an image like text, things, objects etc.</p>
                     </div>

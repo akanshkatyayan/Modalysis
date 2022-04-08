@@ -377,3 +377,22 @@ input[type=submit] {
   cursor: pointer;
 
 }
+
+.loginlabel {
+        font-size: 15px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+
+.updatepasswordlink {
+        font-size: 15px;
+        text-align: center;
+        color: #f9004d;
+}
+
+.uploadmlmodel {
+        font-size: 15px;
+        text-align: left;
+        color: #f9004d;
+}

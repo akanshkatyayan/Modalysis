@@ -19,6 +19,11 @@ def login():
     return User().login()
 
 
-@app.route('/mlmodel/getmodel', methods=['GET'])
-def get_model():
-    return MlModels().get_model()
+@app.route('/user/updatepassword/', methods=['PUT'])
+def update_password():
+    return User().update_password()
+
+
+@app.route('/mlmodel/uploadmodel/', methods=['POST'])
+def upload_model():
+    return MlModels().upload_model()

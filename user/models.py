@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, session, redirect
+from flask import Flask, jsonify, request, session, redirect, flash
 from passlib.hash import pbkdf2_sha256
 from app import db
 import uuid
@@ -68,3 +68,44 @@ class User:
             return self.start_session(user)
 
         return jsonify({"error": "Invalid login credentials"}), 401
+
+
+    def update_password(self):
+        print(request.form)
+
+        # Check for existing email address
+
+        # Create the user object
+        user_update = {
+            "email": request.form.get('email'),
+            "password": request.form.get('password'),
+            "confirm_password": request.form.get('confirmpassword')
+        }
+
+        if not db.users.find_one({"email": user_update['email']}):
+            return jsonify({"error": "Email Id doesn't Exist"}), 400
+
+        user = db.users.find_one({"email": user_update['email']})
+
+        # Check password and confirm password should be same:
+        if user_update['password'] != user_update['confirm_password']:
+            return jsonify({"error": "Password doesn't match"}), 400
+
+        # Check if user email exist and password in the form and encrypted password from db are same
+        if user and pbkdf2_sha256.verify(user_update['password'], user['password']):
+            return jsonify({"error": "New password must be different"}), 400
+
+        # Encrypt the password
+        user_update['password'] = pbkdf2_sha256.encrypt(user_update['password'])
+        user_update['confirm_password'] = pbkdf2_sha256.encrypt(user_update['confirm_password'])
+
+        users = db.users
+        users.find_one_and_update(
+            {'email': user_update['email']},
+            {'$set':
+                 {'password': user_update['password']}
+             }, upsert=False
+        )
+
+        return jsonify(user), 200
+

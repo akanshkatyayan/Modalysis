@@ -41,10 +41,34 @@ def home():
 @login_required
 def dashboard():
     # render template to display this html page on app.route /dashboard/
+    if session['user']['role'] == "admin":
+        return render_template("admindashboard.html")
     return render_template("userdashboard.html")
+
+# @app.route('/admindashboard/')
+# @login_required
+# def admindashboard():
+#     # render template to display this html page on app.route /dashboard/
+#     return render_template("admindashboard.html")
 
 
 @app.route('/signup/')
 def register():
     # render template to display signup page for new user
     return render_template("signup.html")
+
+@app.route('/dashboard/computeimage/')
+def compute_engine():
+    # render template to display to Compute Engine Page
+    return render_template("computeengineapi.html")
+
+
+@app.route('/dashboard/updatepassword/')
+def updatepassword():
+    # render template to display to Compute Engine Page
+    return render_template("updatepassword.html")
+
+@app.route('/dashboard/uploadmlmodel/')
+def upload_mlmodel():
+    # render template to display to Compute Engine Page
+    return render_template("uploadmlmodel.html")
