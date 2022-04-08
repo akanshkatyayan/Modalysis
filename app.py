@@ -45,7 +45,7 @@ def dashboard():
     # render template to display this html page on app.route /dashboard/
     return render_template("userdashboard.html")
 
-@app.route('/dashboard/summarizer/')
+@app.route('/dashboard/summarizer/', methods= ['POST', 'GET'])
 @login_required
 def summarizer():
     # render template to display this html page on app.route /dashboard/
