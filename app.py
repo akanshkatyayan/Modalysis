@@ -7,7 +7,9 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 app = Flask(__name__)
+app.debug = True
 app.secret_key=config.get('main', 'secret_key')
+
 
 # Database
 db_connection_stmt = config.get('main', 'db_command')
@@ -45,17 +47,19 @@ def dashboard():
         return render_template("admindashboard.html")
     return render_template("userdashboard.html")
 
-# @app.route('/admindashboard/')
-# @login_required
-# def admindashboard():
-#     # render template to display this html page on app.route /dashboard/
-#     return render_template("admindashboard.html")
+
+@app.route('/dashboard/summarizer/')
+@login_required
+def summarizer():
+    # render template to display this html page on app.route /dashboard/
+    return render_template("summarizer.html")
 
 
 @app.route('/signup/')
 def register():
     # render template to display signup page for new user
     return render_template("signup.html")
+
 
 @app.route('/dashboard/computeimage/')
 def compute_engine():
@@ -67,6 +71,7 @@ def compute_engine():
 def updatepassword():
     # render template to display to Compute Engine Page
     return render_template("updatepassword.html")
+
 
 @app.route('/dashboard/uploadmlmodel/')
 def upload_mlmodel():
