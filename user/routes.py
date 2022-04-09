@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
+from discord_webhook import DiscordWebhook, DiscordEmbed
 from app import app
 from user.models import User
 from mlmodels.model_api import MlModels
 from user.summary import BERTSummarizer
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 
 @app.route('/user/signup', methods=['POST'])
@@ -49,6 +53,12 @@ def get_summary():
             print('inside except')
          #print(text)
          res = BERTSummarizer(text)
+         webhook = DiscordWebhook(url=config.get('main','webhook'), content='Your Text Summary is Ready...')
+         webhook.add_file(file=res, filename='summary.txt')
+         webhook.execute()
+         
          #print(res)
          #return('Task Done')
          return render_template('summarizer_result.html', result =res)
+
+
