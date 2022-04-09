@@ -7,3 +7,4 @@ dnspython
 torchvision
 transformers
 bert-extractive-summarizer
+discord_webhook

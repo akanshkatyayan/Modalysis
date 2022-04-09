@@ -11,6 +11,7 @@ app.debug = True
 app.secret_key=config.get('main', 'secret_key')
 
 
+
 # Database
 db_connection_stmt = config.get('main', 'db_command')
 client = pymongo.MongoClient(db_connection_stmt)
@@ -37,6 +38,11 @@ from user import routes
 def home():
     # render template to display this html page on app.route /
     return render_template("index.html")
+
+@app.route('/aboutus')
+def aboutus():
+    # render template to display this html page on app.route /
+    return render_template("aboutus.html")
 
 
 @app.route('/dashboard/')
@@ -77,3 +83,4 @@ def updatepassword():
 def upload_mlmodel():
     # render template to display to Compute Engine Page
     return render_template("uploadmlmodel.html")
+
