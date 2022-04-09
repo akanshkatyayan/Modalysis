@@ -50,5 +50,5 @@ def get_summary():
          #print(text)
          res = BERTSummarizer(text)
          #print(res)
-        #return('Task Done')
+         #return('Task Done')
          return render_template('summarizer_result.html', result =res)
