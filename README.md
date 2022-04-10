@@ -60,6 +60,22 @@ python wsgi.py
 ```
 ## Setup: GCP Deployment
 
+App Engine is a fully managed, serverless platform for developing and hosting web applications at scale
+
+**Steps:**
+ - Created a VM instance on Google cloud Platfom
+ - Created a Project named: modalysis
+ - Enable Cloud Engine API
+ - App Engine:
+    -  Create a new application
+    -  Select location : europe-west2
+ -  Source repository:
+    -  Add repo: connect external repo
+    -  Authenticate from github repo
+    -  
+    -  
+
+
 
 ## Home Page:
 <img src="/static/img/HomePage_Screenshot.png" width="1000" />
