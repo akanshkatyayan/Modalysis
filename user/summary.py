@@ -1,5 +1,10 @@
-from summarizer import TransformerSummarizer
 import pickle
+from functools import lru_cache
+
+from google.cloud import storage
+client= storage.Client()
+bucket = client.get_bucket('bertbucket_modalysis')
+blob= bucket.blob('sum_bert.pkl')
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
 The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring island of Borneo.
@@ -32,28 +37,21 @@ def data_clean(body):
 
 
 def BERTSummarizer(body):
-    model_path = r"mlmodels/sum_bert.pkl"
-    # print('len body:', len(body))
-    model = pickle.load(open(model_path, 'rb'))
-    # print('model loaded')
+    # model_path = r"../../mlmodels/sum_bert.pkl"
+    print('len body:', len(body))
+    pickle_in = blob.download_as_string()
+    #model = pickle.load(open(model_path, 'rb'))
+    model = pickle.loads(pickle_in)
+    print('model loaded')
     data = data_clean(body)    
     result = ''.join(model(data, min_length=50))
-    # print('len BERT summary:', len(result))
+    print('len BERT summary:', len(result))
     # print(result)
-    return result 
+    return result  
 
 
-def GPTSummarizer(body):
 
-    print('len body:', len(body))
-    GPT2_model = TransformerSummarizer(transformer_type="GPT2",transformer_model_key="gpt2-medium")
-    data = data_clean(body)
-    full = ''.join(GPT2_model(data, min_length=60))
-    print('len GPT summary:', len(full))
-    print(full)
-    #return full
-
-BERTSummarizer(dummy_text)
+#BERTSummarizer(dummy_text)
 #GPTSummarizer(body)
 
 '''
