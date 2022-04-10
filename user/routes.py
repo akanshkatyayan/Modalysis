@@ -81,3 +81,13 @@ def createuser():
 @app.route('/user/deleteuser', methods=['DELETE'])
 def deleteuser():
     return User().deleteuser()
+
+
+@app.route('/user/updateuser', methods=['PUT'])
+def updateuser():
+    return User().updateuser()
+
+
+@app.route('/user/getusers', methods=['GET'])
+def getusers():
+    return User().getusers()

@@ -105,8 +105,8 @@
     ::placeholder{
       color: #e5e5e5;
     }
+
     button{
-      margin-top: 50px;
       width: 100%;
       background-color: #f9004d;
       color: white;
@@ -222,6 +222,33 @@
         margin-top: 8px;
     }
 
+<!--    .tableclass{-->
+<!--        font:20px Verdana;-->
+<!--        width: 100%;-->
+<!--        color: white;-->
+
+<!--    }-->
+
+     th, td {
+            font:20px Verdana;
+            width: 100%;
+            color: white;
+     }
+
+     table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+            color: white;
+        }
+
+     th {
+            font-weight:bold;
+            color: white;
+        }
+
 
       </style>
     </head>
@@ -252,8 +279,12 @@
                     </div>
 
                     <div id="view" class="tabcontent">
-                      <h3>View Users</h3>
-                      <p>List of Current Users</p>
+                      <h3>List of Current Users</h3>
+                        <form name="getuser_form">
+                            <p class="error error--hidden"></p>
+                            <input type="submit" value="Show all users" class="button">
+                        </form>
+                        <p id="showUserData"></p>
 
                     </div>
 
@@ -261,16 +292,16 @@
                       <h4>Enter below fields to create a new user</h4>
                         <form name="createuser_form">
                             <label for="username">Name</label>
-                            <input type="text" name="name" placeholder="Name" id="name">
+                            <input type="text" name="name" placeholder="Name">
 
                             <label for="username">Username</label>
-                            <input type="text" name="email" placeholder="Email Id" id="username">
+                            <input type="text" name="email" placeholder="Email Id">
 
                             <label for="password">Password</label>
-                            <input type="password" name="password" placeholder="Password" id="password">
+                            <input type="password" name="password" placeholder="Password">
 
                             <label for="role">Select Role</label>
-                            <select name="role" id="role" class="dropdownselector">
+                            <select name="role" class="dropdownselector">
                                 <option value="admin">Admin</option>
                                 <option value="app_user">Application User</option>
                             </select>
@@ -287,17 +318,13 @@
                       <h4>Enter below fields to update user details</h4>
                         <form name="updateuser_form">
                             <label for="username">Enter Email of the user to update</label>
-                            <input type="text" name="email" placeholder="Email Id" id="username">
-
+                            <input type="text" name="email" placeholder="Email Id" id="username1" required>
 
                             <label for="username">Updated Name</label>
-                            <input type="text" name="name" placeholder="Name" id="name">
-
-                            <label for="password"> Update Password</label>
-                            <input type="password" name="password" placeholder="Password" id="password">
+                            <input type="text" name="name" placeholder="Name" id="name" required>
 
                             <label for="role">Update Role</label>
-                            <select name="role" id="role" class="dropdownselector">
+                            <select name="role" id="role" class="dropdownselector" required>
                                 <option value="admin">Admin</option>
                                 <option value="app_user">Application User</option>
                             </select>
@@ -344,6 +371,7 @@
               }
               document.getElementById(operationName).style.display = "block";
               evt.currentTarget.className += " active";
+
             }
         </script>
 

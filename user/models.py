@@ -152,3 +152,43 @@ class User:
             users.delete_one(user)
 
         return jsonify({"success": "User deleted successfully!"}), 200
+
+    def updateuser(self):
+
+        # Check for existing email address and update user
+
+        # Update the user object
+        user_email = request.form.get('email')
+        user_new_name = request.form.get('name')
+        user_new_role = request.form.get('role')
+
+        if not db.users.find_one({"email": user_email}):
+            return jsonify({"error": "Email Id doesn't Exist"}), 400
+
+        user = db.users.find_one({"email": user_email})
+
+        if user:
+            if user_new_name == user['name'] and user_new_role == user['role']:
+                return jsonify({"error": "Entered values are same as before. Please update"}), 400
+            users = db.users
+            users.find_one_and_update(
+                {'email': user_email},
+                {'$set':
+                     {'name': user_new_name, 'role': user_new_role},
+                 }, upsert=False
+            )
+
+
+        return jsonify({"success": "User updated successfully!"}), 200
+
+
+    def getusers(self):
+        """
+        Function to get user details from DB
+        :return: JSON with user details
+        """
+        users_data = []
+        for each_user in db.users.find():
+            users_data.append({'Name': each_user['name'],
+                               'Email Id': each_user['email']})
+        return jsonify(users_data), 200
