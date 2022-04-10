@@ -27,19 +27,19 @@ def data_clean(body):
     sentence = re.sub(r"â\s+", "", body)
     sentence = re.sub(r'\r\n+', "", sentence)
     
-    print(sentence)
+    # print(sentence)
     return sentence
 
 
 def BERTSummarizer(body):
-    model_path = r"mlmodels\sum_bert.pkl"
-    print('len body:', len(body))
+    model_path = r"mlmodels/sum_bert.pkl"
+    # print('len body:', len(body))
     model = pickle.load(open(model_path, 'rb'))
-    print('model loaded')
+    # print('model loaded')
     data = data_clean(body)    
     result = ''.join(model(data, min_length=50))
-    print('len BERT summary:', len(result))
-    #print(result)
+    # print('len BERT summary:', len(result))
+    # print(result)
     return result 
 
 
