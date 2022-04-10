@@ -1,4 +1,5 @@
 flask
+pandas
 gunicorn
 pymongo==4.0.2
 passlib==1.7.4

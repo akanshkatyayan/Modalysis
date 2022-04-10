@@ -29,9 +29,18 @@ def update_password():
     return User().update_password()
 
 
-@app.route('/mlmodel/uploadmodel/', methods=['POST'])
+@app.route('/dashboard/uploadmlmodel/', methods=['GET', 'POST'])
 def upload_model():
-    return MlModels().upload_model()
+    if request.method == 'POST':
+        modelname = request.form.get('modelname')
+        print(modelname)
+        file = request.files['inputmodel']
+        print(file.filename)
+        if file:
+            print(file.filename)
+
+    return render_template('uploadmlmodel.html')
+    #return MlModels().upload_model()
 
 
 @app.route('/mlmodel/getmodel', methods=['GET'])
@@ -46,19 +55,29 @@ def get_summary():
 
          if file:                  
             text= str(file.read())
-            print('inside try')
+            print('inside if')
          else:
             t = request.form['text']
-            text= str(t)
-            print('inside except')
-         #print(text)
+            text = str(t)
+            print('inside else')
+         # print(text)
          res = BERTSummarizer(text)
          webhook = DiscordWebhook(url=config.get('main','webhook'), content='Your Text Summary is Ready...')
          webhook.add_file(file=res, filename='summary.txt')
          webhook.execute()
          
-         #print(res)
-         #return('Task Done')
-         return render_template('summarizer_result.html', result =res)
+         # print(res)
+         # return('Task Done')
+         return render_template('summarizer_result.html', result=res)
 
 
+# ---------------------User Management--------------------- #
+
+@app.route('/user/createuser', methods=['POST'])
+def createuser():
+    return User().createuser()
+
+
+@app.route('/user/deleteuser', methods=['DELETE'])
+def deleteuser():
+    return User().deleteuser()

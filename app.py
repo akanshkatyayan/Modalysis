@@ -84,3 +84,8 @@ def upload_mlmodel():
     # render template to display to Compute Engine Page
     return render_template("uploadmlmodel.html")
 
+
+@app.route('/dashboard/manageusers/')
+def manage_users():
+    # render template to display to Compute Engine Page
+    return render_template("manageusers.html")

@@ -181,13 +181,13 @@
 
             <div class="content">
                 <div>
-                <form name="uploadmodel_form" class="uploadmlmodel">
+                <form name="uploadmodel_form" class="uploadmlmodel" enctype="multipart/form-data">
                             <h3> Upload ML Model </h3>
                             <label for="modelname">Model Name</label>
                             <input type="text" name="modelname" placeholder="Model Name" id="modelname">
 
-                            <label for="modelfile">Upload Pickle File</label>
-                            <input type="file" name="input_model" autocomplete="False" required>
+                            <label for="inputmodel">Upload Pickle File</label>
+                            <input type="file" name="inputmodel" id="inputmodel" required>
 
                             <p class="error error--hidden"></p>
                             <input type="submit" value="Submit" class="button">

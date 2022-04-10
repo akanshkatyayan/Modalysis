@@ -1,7 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, session, flash
 import pymongo
 from app import db
 import pickle
+import pandas as pd
+import time
 
 
 class MlModels:
@@ -19,14 +21,22 @@ class MlModels:
         return pickle.loads(pickled_model)
 
     def upload_model(self):
-        info = db.insert_one({model_name: pickled_model, 'name': model_name, 'created_time': time.time()})
-        print(info.inserted_id, ' saved with this id successfully!')
 
-        details = {
-            'inserted_id': info.inserted_id,
-            'model_name': model_name,
-            'created_time': time.time()
-        }
+        """
+        Function to upload ML Model to MongoDB
+        """
+        # model_name = request.form.get('modelname')
+        # print(model_name)
+        # inputfile = request.files['file']
+        # print(inputfile.filename)
+        # pickle_object = pd.read_pickle(inputfile)
+        #
+        #
+        # result = db.model_pickle_files.insert_one({model_name: pickle_object, 'name': model_name, 'created_time': time.time()})
+        # flash("Model {} saved with Id: {}".format(model_name, result.inserted_id))
+        #
+        return jsonify("test", 200)
+
 
     def train_model(self, model_name, train_data):
         pass

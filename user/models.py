@@ -23,8 +23,6 @@ class User:
         Encrypt Password using hash function.
 
         """
-        print(request.form)
-
         # Create the user object
         user = {
             "_id": uuid.uuid4().hex,
@@ -69,7 +67,6 @@ class User:
 
         return jsonify({"error": "Invalid login credentials"}), 401
 
-
     def update_password(self):
         print(request.form)
 
@@ -109,7 +106,49 @@ class User:
 
         return jsonify(user), 200
 
-    
 
-    
+    def createuser(self):
+        """
+        function to create a new user by Admin.
+        Encrypt Password using hash function.
 
+        """
+        # Create the user object
+        user = {
+            "_id": uuid.uuid4().hex,
+            "name": request.form.get('name'),
+            "email": request.form.get('email'),
+            "password": request.form.get('password'),
+            "role": request.form.get('role')
+        }
+
+        # Encrypt the password
+        user['password'] = pbkdf2_sha256.encrypt(user['password'])
+
+        # Check for existing email address
+        if db.users.find_one({"email": user['email']}):
+            return jsonify({"error": "Email address already in use"}), 400
+
+        if db.users.insert_one(user):
+            flash("User Created Successfully!")
+            return jsonify({"success": "User Created Successfully"}), 200
+
+        return jsonify({"error": "Signup failed"}), 400
+
+    def deleteuser(self):
+
+        # Check for existing email address and delete user
+
+        # Create the user object
+        user_email = request.form.get('email')
+
+        if not db.users.find_one({"email": user_email}):
+            return jsonify({"error": "Email Id doesn't Exist"}), 400
+
+        user = db.users.find_one({"email": user_email})
+
+        if user:
+            users = db.users
+            users.delete_one(user)
+
+        return jsonify({"success": "User deleted successfully!"}), 200
