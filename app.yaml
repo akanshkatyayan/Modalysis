@@ -1,4 +1,4 @@
-runtime:python
+runtime: python
 env: flex
 entrypoint: gunicorn -b :$PORT wsgi:app
 runtime_config: 
