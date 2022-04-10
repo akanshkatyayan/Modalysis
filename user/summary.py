@@ -1,4 +1,4 @@
-from summarizer import Summarizer,TransformerSummarizer
+from summarizer import TransformerSummarizer
 import pickle
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
