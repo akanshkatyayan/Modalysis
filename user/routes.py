@@ -62,13 +62,14 @@ def get_summary():
             print('inside else')
          # print(text)
          res = BERTSummarizer(text)
+
          webhook = DiscordWebhook(url=config.get('main','webhook'), content='Your Text Summary is Ready...')
          webhook.add_file(file=res, filename='summary.txt')
          webhook.execute()
          
          # print(res)
          # return('Task Done')
-         return render_template('summarizer_result.html', result=res)
+         return render_template('summarizer.html', result=res)
 
 
 # ---------------------User Management--------------------- #
