@@ -29,7 +29,8 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 > Summarization strategies are typically categorized as extractive, abstractive or mixed. 
 >  - Extractive strategies select the top N sentences that best represent the key points of the article. 
 >  - Abstractive summaries seek to reproduce the key points of the article in new words.
->  Extractive summarization is a challenging NLP task that has only recently become practical by transformer models like BERT(Bidirectional Encoder Representations from Transformers) published by researchers at Google AI Language. BERT (Bidirectional transformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional.
+>  
+> Extractive summarization is a challenging NLP task that has only recently become practical by transformer models like BERT(Bidirectional Encoder Representations from Transformers) published by researchers at Google AI Language. BERT (Bidirectional transformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional.
 
 ## Setup: Local Deployment
 ```
