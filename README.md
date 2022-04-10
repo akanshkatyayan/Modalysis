@@ -25,7 +25,7 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 ![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-### BERT SUMMARIZATION:
+### Bert Summarization:
 > Summarization strategies are typically categorized as extractive, abstractive or mixed. 
 >  - Extractive strategies select the top N sentences that best represent the key points of the article. 
 >  - Abstractive summaries seek to reproduce the key points of the article in new words.
