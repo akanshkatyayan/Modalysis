@@ -60,7 +60,8 @@ python wsgi.py
 ```
 ## Setup: GCP Deployment
 
-App Engine is a fully managed, serverless platform for developing and hosting web applications at scale
+Google App Engine (often referred to as GAE or simply App Engine) is a cloud computing platform as a service for developing and hosting web applications in Google-managed data centers. Applications are sandboxed and run across multiple servers. It offers automatic scaling for web applications—as the number of requests increases for an application and automatically allocates more resources for the web application to handle the additional demand.
+
 
 **Steps:**
  - Created a VM instance on Google cloud Platfom
