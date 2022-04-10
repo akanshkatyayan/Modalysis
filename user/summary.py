@@ -1,6 +1,5 @@
-from summarizer import Summarizer,TransformerSummarizer
+from summarizer import TransformerSummarizer
 import pickle
-from spacy.lemmatizer import Lemmatizer
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
 The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring island of Borneo.
