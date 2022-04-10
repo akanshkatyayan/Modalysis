@@ -66,5 +66,25 @@ python wsgi.py
 
 ## Project Requirement CheckList:
 
+:white_check_mark: REST-based service interface for CRUD operations 
+> GET, POST, PUT, DELETE
 
+:white_check_mark: Interaction with external REST services
+> Used Discord Api to send the summarized results directly to discord
+ 
+:white_check_mark: Use of an external Cloud database for persisting information
+> MongoDb Cluster
 
+:white_check_mark: Serving the application over https
+
+:white_check_mark: Implementing hash-based authentication
+
+:white_check_mark: Implementing user accounts and access management
+
+:white_check_mark: Securing the database with role-based policies
+
+#### Links:
+
+![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+
+![](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)
