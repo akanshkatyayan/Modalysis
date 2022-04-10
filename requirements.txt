@@ -12,3 +12,5 @@ transformers
 bert-extractive-summarizer
 discord_webhook
 spacy==2.2.4
+google-cloud-storage
+lru_cache
