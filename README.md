@@ -1,5 +1,13 @@
 # Cloud Computing: MiniProject - Modalysis
 
+![](https://img.shields.io/apm/l/vim-mode?color=blue&style=plastic)
+![](https://img.shields.io/github/commit-activity/m/antra0497/Modalysis?color=green&style=plastic)
+![](https://img.shields.io/github/languages/count/antra0497/Modalysis?color=orange&style=plastic)
+![]()
+![]()
+![]()
+
+
 Team: 
 Akansh Katyayan
 Antra Tripathi
@@ -24,6 +32,9 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=antra0497&repo=Modalysis&langs_count=8)](https://github.com/antra0497/Modalysis)
 
 ### Bert Summarization:
 > Summarization strategies are typically categorized as extractive, abstractive or mixed. 
@@ -47,13 +58,13 @@ Run the Flask server
 ```
 python wsgi.py
 ```
-
-
+## Setup: GCP Deployment
 
 
 ## Home Page:
 <img src="/static/img/HomePage_Screenshot.png" width="1000" />
 
+## Project Requirement CheckList:
 
 
 
