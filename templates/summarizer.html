@@ -150,7 +150,17 @@
                   <textarea type="text" name="text"></textarea>
                   <p>or select a text file from local</p>
                   <input type="file" name="file">
-                  <p><input type="submit" value="Submit" class = 'button'></p>                               
+                  <p><input type="submit" value="Submit" class = 'button'></p>                          
+  
+                  <h3>Summarized Text:</h3>
+                  <button onclick="myFunction()">View Summarry</button>
+                  res ={{result}}
+                  <textarea type="text" name="text" id="demo" hidden="True"></textarea>
+                  <script>
+                    function myFunction() {
+                      document.getElementById("demo").innerHTML = res;
+                    }
+                  </script>                            
                 </form>  
               </div> 
             </div>

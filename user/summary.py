@@ -1,5 +1,5 @@
-from pathy import dataclass
-from summarizer import Summarizer,TransformerSummarizer
+from summarizer import TransformerSummarizer
+import pickle
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
 The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring island of Borneo.
@@ -32,13 +32,16 @@ def data_clean(body):
 
 
 def BERTSummarizer(body):
+    model_path = r"mlmodels\sum_bert.pkl"
     print('len body:', len(body))
-    model = Summarizer()    
-    data = data_clean(body)
+    model = pickle.load(open(model_path, 'rb'))
+    print('model loaded')
+    data = data_clean(body)    
     result = ''.join(model(data, min_length=50))
     print('len BERT summary:', len(result))
     #print(result)
-    return result
+    return result 
+
 
 def GPTSummarizer(body):
 
@@ -47,10 +50,10 @@ def GPTSummarizer(body):
     data = data_clean(body)
     full = ''.join(GPT2_model(data, min_length=60))
     print('len GPT summary:', len(full))
-    #print(full)
-    return full
+    print(full)
+    #return full
 
-#BERTSummarizer(body)
+BERTSummarizer(dummy_text)
 #GPTSummarizer(body)
 
 '''

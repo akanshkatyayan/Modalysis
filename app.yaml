@@ -1,6 +1,5 @@
-name: modalysis-env
-dependencies:
-  - python>=3.7
-  - pip
-  - pip:
-    - -r requirements.txt
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT wsgi:app
+runtime_config: 
+  python_version: 3.7
