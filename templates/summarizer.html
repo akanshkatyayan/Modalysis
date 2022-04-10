@@ -137,6 +137,7 @@
                     <li><a href="/aboutus"><h2>About Us</h2></a></li>
                 </ul>
                 <p class="loginlabel">Logged in as <strong> {{ session['user']['name'] }}</strong></p>
+                <a href="/dashboard/updatepassword/" class="updatepasswordlink">Update Password</a>
                 <a href="/user/signout" class="btn">Log Out</a>
             </nav>
           </div>
@@ -150,16 +151,7 @@
                   <p>or select a text file from local</p>
                   <input type="file" name="file">
                   <p><input type="submit" value="Submit" class = 'button'></p>                          
-  
-                  <h3>Summarized Text:</h3>
-                  <button onclick="myFunction()">View Summarry</button>
-                  res ={{result}}
-                  <textarea type="text" name="text" id="demo" hidden="True"></textarea>
-                  <script>
-                    function myFunction() {
-                      document.getElementById("demo").innerHTML = res;
-                    }
-                  </script>                            
+
                 </form>  
               </div> 
             </div>

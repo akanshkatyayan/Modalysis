@@ -207,7 +207,6 @@ img {
   margin-bottom: 10px;
 }
 
-
       </style>
     </head>
     <body>
@@ -219,9 +218,11 @@ img {
                     <li><a href="/"><h2>Home</h2></a></li>
                     <li><a href="/aboutus"><h2>About Us</h2></a></li>
                 </ul>
-                <p class="loginlabel">Logged in as <strong> {{ session['user']['name'] }}</strong></p>
-                <a href="/dashboard/updatepassword/" class="updatepasswordlink">Update Password</a>
-                <a href="/user/signout" class="btn">Log Out</a>
+                    {% if session['user'] %}
+                    <p class="loginlabel">Logged in as <strong> {{ session['user']['name'] }}</strong></p>
+                    <a href="/dashboard/updatepassword/" class="updatepasswordlink">Update Password</a>
+                    <a href="/user/signout" class="btn">Log Out</a>
+                    {% endif %}
             </nav>
     
             <div class="content">

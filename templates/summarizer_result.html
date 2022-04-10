@@ -141,10 +141,11 @@
 
             <div class='wrapper'>
               <div class = 'form'>
-                <form>
+                <form name="summaryresult_form">
                   <p>Summary Result:</p>
                   <textarea name="message">{{result}}</textarea>
-                  <p><input type="submit" value="Try Again!" class="button"></p>
+                    <p class="error error--hidden"></p>
+                  <p><input type="submit" value="Send to Discord" class="button"></p>
                 </form>   
               </div> 
             </div>

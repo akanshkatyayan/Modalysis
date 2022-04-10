@@ -1,7 +1,11 @@
 from flask import Flask, jsonify, request, session, redirect, flash
+from discord_webhook import DiscordWebhook, DiscordEmbed
 from passlib.hash import pbkdf2_sha256
 from app import db
 import uuid
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 
 class User:
@@ -106,6 +110,17 @@ class User:
 
         return jsonify(user), 200
 
+
+    def sendtodiscord(self):
+        webhook = DiscordWebhook(url=config.get('main', 'webhook'), content='Your Text Summary is Ready...')
+        webhook.add_file(file=request.form.get('message'), filename='summary.txt')
+        if webhook.execute():
+            return jsonify({"success": "Message sent successfully"}), 200
+        else:
+            return jsonify({"error": "Message failed"}), 400
+
+
+    # -------------------------- User Management ----------------------- #
 
     def createuser(self):
         """

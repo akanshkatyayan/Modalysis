@@ -67,12 +67,6 @@ def register():
     return render_template("signup.html")
 
 
-@app.route('/dashboard/computeimage/')
-def compute_engine():
-    # render template to display to Compute Engine Page
-    return render_template("computeengineapi.html")
-
-
 @app.route('/dashboard/updatepassword/')
 def updatepassword():
     # render template to display to Compute Engine Page
