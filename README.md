@@ -32,6 +32,7 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 
@@ -56,7 +57,7 @@ Run the Flask server
 ```
 python wsgi.py
 ```
-## Setup: GCP Deployment
+## Setup: GCP Deployment: https://modalysis-346819.nw.r.appspot.com/
 
 Google App Engine (often referred to as GAE or simply App Engine) is a cloud computing platform as a service for developing and hosting web applications in Google-managed data centers. Applications are sandboxed and run across multiple servers. It offers automatic scaling for web applications—as the number of requests increases for an application and automatically allocates more resources for the web application to handle the additional demand.
 
@@ -75,6 +76,8 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
     -  Deployed App: ```gcloud app deploy```
 
 ![image](https://user-images.githubusercontent.com/25953832/162655775-a92576cc-dbf0-4ba5-a82b-1fb6c45dd5a1.png)
+
+## Setup: HerokuApp : https://modalysis.herokuapp.com/
 
 ## Deployment Architecture:
 
