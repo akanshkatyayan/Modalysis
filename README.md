@@ -34,7 +34,6 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=antra0497&repo=Modalysis&langs_count=8)](https://github.com/antra0497/Modalysis)
 
 ### Bart Summarization:
 > Summarization strategies are typically categorized as extractive, abstractive or mixed. 
@@ -77,6 +76,10 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 ![image](https://user-images.githubusercontent.com/25953832/162655775-a92576cc-dbf0-4ba5-a82b-1fb6c45dd5a1.png)
 
+## Deployment Architecture:
+
+![dia drawio](https://user-images.githubusercontent.com/25953832/162659447-d3edffc5-5c6b-4f94-8a54-3c4dd01c3b4a.png)
+
 
 ## Home Page: 
 
@@ -86,9 +89,10 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 ## Project Requirement CheckList:
 
 :white_check_mark: REST-based service interface for CRUD operations 
-> GET, POST, PUT, DELETE
+> GET, POST, PUT, DELETE 
 
 :white_check_mark: Interaction with external REST services
+> Using NLP Cloud Playground API to fetch the model
 > Used Discord Api to send the summarized results directly to discord
  
 :white_check_mark: Use of an external Cloud database for persisting information
