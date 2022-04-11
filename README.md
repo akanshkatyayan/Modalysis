@@ -36,23 +36,22 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=antra0497&repo=Modalysis&langs_count=8)](https://github.com/antra0497/Modalysis)
 
-### Bert Summarization:
+### Bart Summarization:
 > Summarization strategies are typically categorized as extractive, abstractive or mixed. 
 >  - Extractive strategies select the top N sentences that best represent the key points of the article. 
 >  - Abstractive summaries seek to reproduce the key points of the article in new words.
 >  
-> Extractive summarization is a challenging NLP task that has only recently become practical by transformer models like BERT(Bidirectional Encoder Representations from Transformers) published by researchers at Google AI Language. BERT (Bidirectional transformer) is a transformer used to overcome the limitations of RNN and other neural networks as Long term dependencies. It is a pre-trained model that is naturally bidirectional.
+> Extractive summarization is a challenging NLP task that has only recently become practical by transformer models like BART. It is a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by 
+>  - (1) corrupting text with an arbitrary noising function, and 
+>  - (2) learning a model to reconstruct the original text. 
+>  
+>  It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and many other more recent pretraining schemes. Bart uses a standard seq2seq/machine translation architecture with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT)
 
 ## Setup: Local Deployment
 ```
 git clone https://github.com/antra0497/Modalysis.git
 cd Modalysis
 pip install -r requirements.txt
-```
-Download pretrained Bert Model:
-```
-cd user
-python model_download.py
 ```
 Run the Flask server
 ```
@@ -65,7 +64,7 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 **Steps:**
  - Created a VM instance on Google cloud Platfom
- - Created a Project named: modalysis
+ - Created a Project named: Modalysis
  - Enable Cloud Engine API
  - App Engine:
     -  Create a new application
@@ -73,12 +72,15 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
  -  Source repository:
     -  Add repo: connect external repo
     -  Authenticate from github repo
-    -  
-    -  
+    -  Changed the gcloud config for timeout :  ```gcloud config set app/cloud_build_timeout 5000```
+    -  Deployed App: ```gcloud app deploy```
+
+![image](https://user-images.githubusercontent.com/25953832/162655775-a92576cc-dbf0-4ba5-a82b-1fb6c45dd5a1.png)
 
 
+## Home Page: 
 
-## Home Page:
+
 <img src="/static/img/HomePage_Screenshot.png" width="1000" />
 
 ## Project Requirement CheckList:
