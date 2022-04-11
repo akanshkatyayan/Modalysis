@@ -45,7 +45,7 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 >  - (1) corrupting text with an arbitrary noising function, and 
 >  - (2) learning a model to reconstruct the original text. 
 >  
->  It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and many other more recent pretraining schemes. Bart uses a standard seq2seq/machine translation architecture with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT)
+>  It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT Bart uses a standard seq2seq/machine translation architecture with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT)
 
 ## Setup: Local Deployment
 ```
