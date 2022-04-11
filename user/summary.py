@@ -1,10 +1,18 @@
-# from summarizer import TransformerSummarizer
-# import pickle
+
 from functools import lru_cache
 import nlpcloud
 import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
+
+import pickle
+from functools import lru_cache
+
+# from google.cloud import storage
+# client= storage.Client()
+# bucket = client.get_bucket('bertbucket_modalysis')
+# blob= bucket.blob('sum_bert.pkl')
+
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
 The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring island of Borneo.
