@@ -5,7 +5,7 @@
 ![](https://img.shields.io/github/languages/count/antra0497/Modalysis?color=orange&style=plastic)
 ![]()
 ![]()
-![]()
+
 
 
 Team: 
@@ -79,6 +79,10 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 ## Setup: HerokuApp : https://modalysis.herokuapp.com/
 
+Heroku is a container-based cloud Platform as a Service (PaaS) for several languages. Applications that are run on Heroku typically have a unique domain used to route HTTP requests to the correct application container or dyno. Each of the dynos are spread across a "dyno grid" which consists of several servers. Heroku's Git server handles application repository pushes from permitted users.
+
+All Heroku services are hosted on Amazon's EC2 cloud-computing platform.
+
 ## Deployment Architecture:
 
 ![dia drawio](https://user-images.githubusercontent.com/25953832/162659447-d3edffc5-5c6b-4f94-8a54-3c4dd01c3b4a.png)
@@ -123,6 +127,7 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 #### Links:
 
-[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ZMBqZXtKN08)
+[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ZMBqZXtKN08) 
+![](https://img.shields.io/youtube/views/ZMBqZXtKN08?style=social)
 
 [![](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)](https://docs.google.com/presentation/d/11n7AiZrcvdAyAV2WlSohrqdJGLh-v_od/edit?usp=sharing&ouid=109340109577034590549&rtpof=true&sd=true)
