@@ -125,6 +125,34 @@
       color: #080710;
       padding:10px;
     }
+
+       #demo, #demo:before {
+        height: 10px;
+        width: 100%;
+        margin: 0;
+        }
+        #demo {
+        background-color: #b3d4fc;
+        display: -webkit-flex;
+        display: none;
+        }
+        #demo:before {
+        background-color: #f9004d;
+        content: '';
+        -webkit-animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        animation: running-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @-webkit-keyframes running-progress {
+        0% { margin-left: 0px; margin-right: 100%; }
+        50% { margin-left: 25%; margin-right: 0%; }
+        100% { margin-left: 100%; margin-right: 0; }
+        }
+        @keyframes running-progress {
+        0% { margin-left: 0px; margin-right: 100%; }
+        50% { margin-left: 25%; margin-right: 0%; }
+        100% { margin-left: 100%; margin-right: 0; }
+        }
+
   </style>
     </head>
     <body>
@@ -150,8 +178,8 @@
                   <textarea type="text" name="text"></textarea>
                   <p>or select a text file from local</p>
                   <input type="file" name="file">
-                  <p><input type="submit" value="Submit" class = 'button'></p>                          
-
+                  <p><input type="submit" value="Submit" class='button' onclick="myFunction()"></p>
+                    <div id="demo"></div>
                 </form>  
               </div> 
             </div>
@@ -159,5 +187,11 @@
 
         <script src="/static/js/jquery.js"></script>
         <script src="/static/js/scripts.js"></script>
+
+        <script>
+            function myFunction() {
+              document.getElementById("demo").style.display = "flex";
+            }
+        </script>
     </body>
 </html>

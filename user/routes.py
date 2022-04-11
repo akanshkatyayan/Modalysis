@@ -6,6 +6,7 @@ from user.summary import BERTSummarizer
 import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
+import nlpcloud
 
 
 @app.route('/user/signup', methods=['POST'])
@@ -58,12 +59,10 @@ def get_summary():
             t = request.form['text']
             text = str(t)
             print('inside else')
-         # print(text)
          res = BERTSummarizer(text)
-         
-         # print(res)
-         # return('Task Done')
+
          return render_template('summarizer_result.html', result=res)
+
 
 @app.route('/dashboard/discord', methods=['POST'])
 def sendtodiscord():

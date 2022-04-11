@@ -1,5 +1,10 @@
-from summarizer import TransformerSummarizer
-import pickle
+# from summarizer import TransformerSummarizer
+# import pickle
+from functools import lru_cache
+import nlpcloud
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 dummy_text = '''Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra.
 The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring island of Borneo.
@@ -19,57 +24,9 @@ In addition, the writers of the study are recommending that plans for a hydropow
 It also recommended that remaining forest in the Sumatran area where the orangutans live be protected.
 I’m Bryan Lynn. '''
 
-import re
-
-def data_clean(body):
-
-    body = body.encode('ascii', 'ignore').decode()
-    sentence = re.sub(r"â\s+", "", body)
-    sentence = re.sub(r'\r\n+', "", sentence)
-    
-    # print(sentence)
-    return sentence
-
-
-def BERTSummarizer(body):
-    model_path = r"mlmodels/sum_bert.pkl"
-    # print('len body:', len(body))
-    model = pickle.load(open(model_path, 'rb'))
-    # print('model loaded')
-    data = data_clean(body)    
-    result = ''.join(model(data, min_length=50))
-    # print('len BERT summary:', len(result))
-    # print(result)
-    return result 
-
-
-def GPTSummarizer(body):
-
-    print('len body:', len(body))
-    GPT2_model = TransformerSummarizer(transformer_type="GPT2",transformer_model_key="gpt2-medium")
-    data = data_clean(body)
-    full = ''.join(GPT2_model(data, min_length=60))
-    print('len GPT summary:', len(full))
-    print(full)
-    #return full
-
-BERTSummarizer(dummy_text)
-#GPTSummarizer(body)
-
-'''
-len BERT summary: 539
-Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra. 
-Researchers named the new species the Tapanuli orangutan. Orangutan – which means person of the forest in the 
-Indonesian and Malay languages - is the world’s biggest tree-living mammal. Their low numbers make the group the most 
-endangered of all the great ape species. There is no unified international system for recognizing new species. 
-It also recommended that remaining forest in the Sumatran area where the orangutans live be protected.
-
-len GPT summary: 621
-Scientists say they have discovered a new species of orangutans on Indonesia’s island of Sumatra. 
-The population differs in several ways from the two existing orangutan species found in Sumatra and the neighboring 
-island of Borneo. They say the animals are considered a new species because of genetic, skeletal and tooth differences. 
-They live within an area covering about 1,000 square kilometers. That is because the environment which they depend on
-is greatly threatened by development. In addition, the writers of the study are recommending that plans for a 
-hydropower center in the area be stopped by the government.
-
-'''
+@lru_cache(maxsize=32)
+def BERTSummarizer(text):
+    client = nlpcloud.Client("bart-large-cnn", config.get('main', 'external_api_key'), False)
+    response = client.summarization(text)
+    result = response['summary_text']
+    return result

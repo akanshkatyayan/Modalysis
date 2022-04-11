@@ -245,4 +245,3 @@ $("form[name=summaryresult_form").submit(function(e) {
     });
     e.preventDefault();
 });
-
