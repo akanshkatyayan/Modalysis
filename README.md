@@ -109,6 +109,18 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 :white_check_mark: Securing the database with role-based policies
 
+## REST URIs:-
+- **Register User:** <POST/user/signup> Description: Method to create a new account, creates a user in our MongoDB database.
+- **User Authentication:** <POST/user/login> Description: Hash based Authentication by verifying the password.
+- **Update Password:** <PUT/user/updatepassword/> Description: Updates password of a registered user.
+- **Invoke BART Summarizer:** (External API): <POST/dashboard/summarizer/> Description: Calls the Bart External API and generates the summary of a given text passage/article using API key.
+- **External Api Discord:** <POST/dashboard/discord> Description: Sends the summary result to our discord server through the Discord Webhook.
+- **GET Users:** <GET/user/getusers> Description: Admin can fetch a list of all the registered users.
+- **UPDATE User Details:** <PUT/user/updateuser> Description: Admin can update the details of any specific user.
+- **DELETE:** <DELETE/user/deleteuser>Description: Admin can delete a user from the database.
+- **Create a User:** <POST/user/createuser>Admin can create a new user and assign a specific role. (Admin/User)
+
+
 #### Links:
 
 ![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
