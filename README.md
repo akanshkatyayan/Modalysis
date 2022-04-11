@@ -123,6 +123,6 @@ Google App Engine (often referred to as GAE or simply App Engine) is a cloud com
 
 #### Links:
 
-![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ZMBqZXtKN08)
 
 [![](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)](https://docs.google.com/presentation/d/11n7AiZrcvdAyAV2WlSohrqdJGLh-v_od/edit?usp=sharing&ouid=109340109577034590549&rtpof=true&sd=true)
