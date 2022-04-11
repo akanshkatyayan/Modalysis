@@ -41,8 +41,8 @@ Creating a Cloud based Flask application using state-of-the-art Machine Learning
 >  - Abstractive summaries seek to reproduce the key points of the article in new words.
 >  
 > Extractive summarization is a challenging NLP task that has only recently become practical by transformer models like BART. It is a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by 
->  - (1) corrupting text with an arbitrary noising function, and 
->  - (2) learning a model to reconstruct the original text. 
+>  -  corrupting text with an arbitrary noising function, and 
+>  -  learning a model to reconstruct the original text. 
 >  
 >  It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT Bart uses a standard seq2seq/machine translation architecture with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT)
 
