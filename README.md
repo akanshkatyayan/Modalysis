@@ -3,10 +3,6 @@
 ![](https://img.shields.io/apm/l/vim-mode?color=blue&style=plastic)
 ![](https://img.shields.io/github/commit-activity/m/antra0497/Modalysis?color=green&style=plastic)
 ![](https://img.shields.io/github/languages/count/antra0497/Modalysis?color=orange&style=plastic)
-![]()
-![]()
-
-
 
 Team: 
 Akansh Katyayan
@@ -14,7 +10,6 @@ Antra Tripathi
 Yash Desai
 Yashowardhan Rungta
 Soumi Chatterjee
-
 
 ## Project Aim:
 Creating a Cloud based Flask application using state-of-the-art Machine Learning models to perform classification tasks and text summarisation with a user management system.
