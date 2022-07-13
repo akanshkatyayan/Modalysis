@@ -130,3 +130,9 @@ All Heroku services are hosted on Amazon's EC2 cloud-computing platform.
 ![](https://img.shields.io/youtube/views/ZMBqZXtKN08?style=social)
 
 [![](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)](https://docs.google.com/presentation/d/11n7AiZrcvdAyAV2WlSohrqdJGLh-v_od/edit?usp=sharing&ouid=109340109577034590549&rtpof=true&sd=true)
+
+
+
+### Result and Feedback on the project:
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/35501313/178767175-2fe7c960-c4f4-4790-a5e5-9c3bd77e0990.png">
